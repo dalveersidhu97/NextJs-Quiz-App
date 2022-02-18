@@ -10,7 +10,7 @@ const QuizResult = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!quizResults || quizResults.length === 0)
+    if (!quizResults || quizResults.length === 0) 
       router.push('/');
   }, [quizResults, router]);
 
