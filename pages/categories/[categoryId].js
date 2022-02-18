@@ -6,6 +6,7 @@ import { useEffect, useReducer, useState } from "react";
 import { Fragment } from "react/cjs/react.production.min";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+import { clearResult, addResult } from "../../store/QuizResultSlice";
 
 export async function getServerSideProps(context) {
   const { data, error } = await sendHttpRequest(
@@ -36,7 +37,7 @@ export default function QuizDetailPage(props) {
   const { data } = props;
   const [state, dispatch] = useReducer(reducer, initialState);
   const [showFeedback, setShowFeedback] = useState(false);
-  //const dispatchResult = useDispatch();
+  const dispatchResult = useDispatch();
 
   const {
     questions,
@@ -50,9 +51,9 @@ export default function QuizDetailPage(props) {
     wasCorrect,
   } = { ...state };
 
-  //   useEffect(() => {
-  //     dispatchResult(clearResult());
-  //   }, [dispatchResult]);
+    useEffect(() => {
+      dispatchResult(clearResult());
+    }, [dispatchResult]);
 
   useEffect(() => {
     if (!isFinished && isStarted) {
@@ -102,14 +103,14 @@ export default function QuizDetailPage(props) {
   };
 
   const answerSubmitHandler = () => {
-    // dispatchResult(
-    //   addResult({
-    //     question: questions[currentQuestionIndex].question,
-    //     correctAnswer: questions[currentQuestionIndex].correct_answer,
-    //     userAnswer,
-    //     options,
-    //   })
-    // );
+    dispatchResult(
+      addResult({
+        question: questions[currentQuestionIndex].question,
+        correctAnswer: questions[currentQuestionIndex].correct_answer,
+        userAnswer,
+        options,
+      })
+    );
     dispatch({ type: "NEXT_QUESTION" });
   };
 
