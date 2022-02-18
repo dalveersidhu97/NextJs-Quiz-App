@@ -8,3 +8,4 @@
 ![Snapshot](https://raw.githubusercontent.com/dalveersidhu97/NextJs-Quiz-App/main/Snapshos/snap2.jpg)
 ![Snapshot](https://raw.githubusercontent.com/dalveersidhu97/NextJs-Quiz-App/main/Snapshos/snap3.jpg)
 ![Snapshot](https://raw.githubusercontent.com/dalveersidhu97/NextJs-Quiz-App/main/Snapshos/snap4.jpg)
+![Snapshot](https://raw.githubusercontent.com/dalveersidhu97/NextJs-Quiz-App/main/Snapshos/snap5.jpg)
